@@ -26,7 +26,7 @@ function Footer() {
             
         </div>
 
-        <p className='text-gray-600 text-center p-5'>@Copyright 2025, Beauty Salon</p>
+        <p className='text-gray-600 text-center p-5'>@Copyright 2025, Glam Books</p>
 
       
     </div>

@@ -35,7 +35,7 @@ function Home() {
       {/* skin care boxes */}
       <div className='md:flex space-x-3 p-5 space-y-6'>
 
-        <div className='relative'>
+        <div className='relative shadow-xl'>
           <img
             className='md:w-[40vw] md:h-[40vh]'
             src="https://media.istockphoto.com/id/2167711128/photo/model-applying-shimmering-highlighter-on-cheekbone-with-makeup-brush.webp?a=1&b=1&s=612x612&w=0&k=20&c=5k_yi-Z662Vy5u006bkn11ymo6avMAp160ouP293A_U=" alt="" />
@@ -49,7 +49,7 @@ function Home() {
           </div>
         </div>
 
-        <div className='relative'>
+        <div className='relative shadow-xl'>
           <img
             className='md:w-[40vw] md:h-[40vh]'
             src="https://images.unsplash.com/photo-1583743599150-3b6048ecf084?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGhhaXIlMjBzdHlsZXxlbnwwfHwwfHx8MA%3D%3D" alt="" />
@@ -63,7 +63,7 @@ function Home() {
           </div>
         </div>
 
-        <div className='relative'>
+        <div className='relative shadow-xl'>
           <img
             className='md:w-[40vw] md:h-[40vh]'
             src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bmFpbCUyMGNhcmV8ZW58MHx8MHx8fDA%3D" alt="" />
@@ -77,12 +77,12 @@ function Home() {
           </div>
         </div>
 
-        <div className='relative'>
+        <div className='relative shadow-3xl'>
           <img
             className='md:w-[40vw] md:h-[40vh]'
             src="https://plus.unsplash.com/premium_photo-1661573269488-01fdb0bea3aa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y29zbWV0b2xvZ3l8ZW58MHx8MHx8fDA%3D" alt="" />
 
-          <div className='flex absolute bottom-1 space-x-3 p-2 items-center justify-center'>
+          <div className='flex absolute bottom-7 space-x-3 p-2 items-center justify-center'>
             <div className='w-[50px] h-[50px] bg-white flex items-center justify-center'>
               <img className='w-[30px] h-[30px]'
                 src={Cosmetology} alt="" />
@@ -95,11 +95,11 @@ function Home() {
 
       {/* Treatments and Prices */}
       <div className='w-full md:flex md:my-15'>
-          <div className='md:w-1/2 h-auto flex justify-center'>
-            <img className=''
+          <div className='md:w-1/2 h-auto flex justify-center shadow-lg'>
+            <img className='shadow-lg'
               src="https://images.unsplash.com/photo-1571686120863-e4f954a93fe3?q=80&w=469&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
           </div>
-          <div className='md:w-1/2 flex justify-center items-center'>
+          <div className='md:w-1/2 flex justify-center items-center shadow-2xl'>
             <div className='justify-center items-center'>
                 <p className='text-red-900 text-5xl font-bold font-serif italic text-center md:p-4 p-7'>Treatments and Prices</p>
                 <p className='font-serif text-gray-700 text-center'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur!</p>
@@ -119,14 +119,14 @@ function Home() {
 
       {/* Testimonials */}
       <div className='w-full py-6 md:flex justify-center'>
-        <div className='w-full md:h-[45vh] bg-red-100'>
+        <div className='w-full md:h-[45vh] bg-red-100 shadow-xl'>
           <p className='text-red-900 text-5xl font-semibold text-center font-serif py-5'>Testimonials</p>
           <p className='text-center text-gray-500 font-semibold'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, 
             doloremque. Deleniti ipsam nostrum similique rerum autem voluptatem numquam dicta nisi.
           </p>
 
           <div className='flex justify-center py-10'>
-            <div className='w-1/2 h-auto bg-white space-y-3 p-7'>
+            <div className='w-1/2 h-auto bg-white space-y-3 p-7 shadow-lg'>
               <div className='ml-20'>
                 <img className='w-[70px] h-[70px] rounded-full'
                   src="https://media.istockphoto.com/id/1285358279/photo/portrait-of-gorgeous-young-woman-joy-and-happiness-stock-photo.webp?a=1&b=1&s=612x612&w=0&k=20&c=WAyN12ktQAAo5cxpiZV7WykiAyM5pCnumGA5uZsUKmQ=" alt="" />
@@ -158,9 +158,9 @@ function Home() {
         <p className='text-red-900 text-6xl font-bold italic font-serif text-center p-4'>Our Shop</p>
         <p className=' text-gray-700 font-semibold text-center text-[20px]'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore!</p>
         
-        <div className='md:flex  md:my-10 justify-center p-7'>
+        <div className='md:flex  md:my-10 justify-center p-7 space-x-2'>
 
-          <div className=''>
+          <div className='shadow-xl'>
             <img className='md:w-[40vw] md:h-[40vh] '
             src="https://imgs.search.brave.com/5eqrAuFy8aW4UTL-ZZ31kw0OiZz2WC-RTfyKNJCBD3U/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NzFVMzdFV1c2akwu/anBn" alt="" />
             <div className='text-center md:my-2'>
@@ -172,7 +172,7 @@ function Home() {
             </div>
           </div>
 
-          <div className=''>
+          <div className='shadow-xl'>
             <img className='md:w-[40vw] md:h-[40vh] '
             src="https://imgs.search.brave.com/IechnQWwXGCYDjy0KAPfKWhkwi6_TExmoY4t3ZLo3D8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjFTNW9UbnVjMkwu/anBn" alt="" />
              <div className='text-center md:my-2 '>
@@ -184,7 +184,7 @@ function Home() {
             </div>
           </div>
 
-          <div className=''>
+          <div className='shadow-xl'>
             <img className='md:w-[40vw] md:h-[40vh] '
             src="https://imgs.search.brave.com/tZChc63eQ8MAcWramMFAMMmSSs_AsGaphZGXiYLGfek/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9odHRw/Mi5tbHN0YXRpYy5j/b20vRF9RX05QXzJY/XzY4ODQ2OS1NTEI4/MjI5MjgwOTc2Ml8w/MjIwMjUtRS1iYXNl/LWxpcXVpZGEtc3Vl/bGVuLW1ha2V1cC1i/LWJlYXV0eS1mb3Nj/by0zNS1tbC53ZWJw" alt="" />
              <div className='text-center md:my-2'>
@@ -196,7 +196,7 @@ function Home() {
             </div>
           </div>
 
-          <div className=''>
+          <div className='shadow-xl'>
             <img className='md:w-[40vw] md:h-[40vh] '
              src="https://imgs.search.brave.com/QPixC7-tEhNxM5Bpcq5CPRO3A4c3k5qSdou4dhH9B04/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzYxVStuWFNtLUJM/LmpwZw" alt="" />
              <div className='text-center md:my-2 '>
