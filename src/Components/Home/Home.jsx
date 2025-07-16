@@ -11,7 +11,7 @@ function Home() {
     <div className='w-full'>
 
       {/* title name */}
-      <div className='w-full h-auto'>
+      <div className='w-full h-auto    '>
         <div className='flex flex-wrap justify-center relative'>
           <img src={lotus} alt="" className='md:w-[32vw] md:h-[60vh] opacity-25' />
           <p style={{fontFamily: "Great Vibes"}} className='text-center text-red-900 text-9xl absolute top-30 font-bold'>Glam Books</p>
@@ -99,7 +99,7 @@ function Home() {
             <img className='shadow-lg'
               src="https://images.unsplash.com/photo-1571686120863-e4f954a93fe3?q=80&w=469&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
           </div>
-          <div className='md:w-1/2 flex justify-center items-center shadow-2xl'>
+          <div className='md:w-1/2 flex justify-center items-center'>
             <div className='justify-center items-center'>
                 <p className='text-red-900 text-5xl font-bold font-serif italic text-center md:p-4 p-7'>Treatments and Prices</p>
                 <p className='font-serif text-gray-700 text-center'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur!</p>
