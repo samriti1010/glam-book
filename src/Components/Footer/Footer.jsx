@@ -17,10 +17,10 @@ function Footer() {
                     adipisicing elit. Ipsam, soluta.
                 </p>
                 <div className='space-x-4'>
-                    <i class="fa-brands fa-facebook"></i>
-                    <i class="fa-brands fa-square-x-twitter"></i>
-                    <i class="fa-brands fa-square-instagram"></i>
-                    <i class="fa-brands fa-telegram"></i>               
+                    <i class="fa-brands fa-facebook cursor-pointer"></i>
+                    <i class="fa-brands fa-square-x-twitter cursor-pointer"></i>
+                    <i class="fa-brands fa-square-instagram cursor-pointer"></i>
+                    <i class="fa-brands fa-telegram cursor-pointer"></i>               
                 </div>
             </div>
             
