@@ -7,9 +7,9 @@ function Footer() {
         <div className='flex justify-center relative'>
             <img className='md:w-[32vw] md:h-[60vh] opacity-20 'src={lotus} />
 
-            <div className='w-1/3 absolute text-center space-y-2 top-20'>
-                <div className='flex justify-center'>
-                 <img src={lotus} className='w-[40px] h-[40px]'/>
+            <div className='md:w-1/3 absolute text-center space-y-2 top-20'>
+                <div className='flex flex-wrap justify-center'>
+                 <img src={lotus} className='md:w-[40px] md:h-[40px]'/>
                 </div>
                 <p style={{fontFamily: "Great Vibes"}} className='text-2xl text-red-950 italic font-serif font-semibold'>Glam Books</p>
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
