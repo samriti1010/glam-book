@@ -4,11 +4,11 @@ import lotus from '../../assets/lotus.png'
 function Footer() {
   return (
     <div className='w-full h-auto bg-red-100'>
-        <div className='flex justify-center relative'>
-            <img className='w-[32vw] h-[60vh] opacity-20 'src={lotus} />
+        <div className='flex justify-center relative md:p-5 p-10 '>
+            <img className='md:w-[32vw] md:h-[60vh] w-[35vw] h-[43] opacity-20 'src={lotus} />
 
-            <div className='md:w-1/3 absolute text-center space-y-2 top-20'>
-                <div className='md:flex flex-wrap justify-center'>
+            <div className='md:w-1/3 h-auto absolute text-center space-y-2 md:top-25 top-15'>
+                <div className='flex flex-wrap justify-center'>
                  <img src={lotus} className='w-[40px] h-[40px]'/>
                 </div>
                 <p style={{fontFamily: "Great Vibes"}} className='text-2xl text-red-950 italic font-serif font-semibold'>Glam Books</p>
@@ -26,7 +26,7 @@ function Footer() {
             
         </div>
 
-        <p className='text-gray-600 text-center p-5'>@Copyright 2025, Glam Books</p>
+        <p className='text-gray-600 text-center md:p-8 p-10'>@Copyright 2025, Glam Books</p>
 
       
     </div>
@@ -34,3 +34,6 @@ function Footer() {
 }
 
 export default Footer
+
+
+
