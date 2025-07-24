@@ -22,7 +22,7 @@ function App() {
       <Header onSearch={setSearchKeyword} addCartvalue={addCartvalue}/>
       <div className='mt-20'>
         <Outlet 
-          context={{searchKeyword, incrementCart, decrementCart }}
+          context={{searchKeyword, incrementCart, decrementCart}}
         />
       </div>
       <Footer/>
