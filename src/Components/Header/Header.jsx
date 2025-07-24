@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import lotus from '../../assets/lotus.png'
 import { NavLink } from 'react-router-dom'
+import App from '../../App';
 
-function Header({onSearch}) {
+function Header({onSearch, addCartvalue}) {
 
     // toggle Menu
     const [isToggledMenu, setIsToggledMenu] = useState(false);
@@ -11,7 +12,6 @@ function Header({onSearch}) {
     }
 
     // Search Button
-
     const [searchKeyword, setSearchKeyword] = useState('')
     const [showSearchInput, setShowSearchInput] = useState(false)
 
@@ -26,6 +26,7 @@ function Header({onSearch}) {
         }
     }
 
+     console.log(addCartvalue);
 
     return (
         <div className='w-full flex flex-wrap justify-between items-center p-3 shadow-md fixed z-15 top-6 bg-white'>
@@ -48,7 +49,10 @@ function Header({onSearch}) {
                 <NavLink to='/signup'>
                     <button className='text-red-950 font-semibold cursor-pointer hover:text-red-900'>Login</button>
                 </NavLink>
-                <i class="fa-solid fa-cart-plus cursor-pointer"></i>
+                <div>
+                    <button className='text-red-900'>{addCartvalue}</button>
+                    <i class="fa-solid fa-cart-plus cursor-pointer"></i>
+                </div>
 
                 {/* search */}
                 <i

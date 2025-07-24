@@ -6,6 +6,8 @@ import HairComb from '../../assets/HairComb.png'
 import NailCare from '../../assets/NailCare.png'
 import Cosmetology from '../../assets/Cosmetology.png'
 import { useState } from 'react'
+import ItemBox from './ItemBox'
+import Product from './Product'
 
 function Home() {
 
@@ -14,6 +16,7 @@ function Home() {
     const toggleBox = (boxName) => {
       setActiveBox(activeBox === boxName ? null : boxName);
     };
+
 
   return (
     <div className='w-full'>
@@ -42,62 +45,27 @@ function Home() {
 
       {/* skin care boxes */}
       <div className='md:flex space-x-3 p-5 space-y-6'>
-
-        <div className='relative shadow-xl'>
-          <img
-            className='md:w-[40vw] md:h-[40vh]'
-            src="https://media.istockphoto.com/id/2167711128/photo/model-applying-shimmering-highlighter-on-cheekbone-with-makeup-brush.webp?a=1&b=1&s=612x612&w=0&k=20&c=5k_yi-Z662Vy5u006bkn11ymo6avMAp160ouP293A_U=" alt="" />
-          
-          <div className='flex absolute bottom-1 space-x-3 p-2 items-center justify-center'>
-            <div className='w-[50px] h-[50px] bg-white flex items-center justify-center'>
-              <img className='w-[30px] h-[30px] text-red-900'
-                src={MakeupBrush} alt="" />
-            </div>
-            <p className='text-white font-bold'>Make up</p>
-          </div>
-        </div>
-
-        <div className='relative shadow-xl'>
-          <img
-            className='md:w-[40vw] md:h-[40vh]'
-            src="https://images.unsplash.com/photo-1583743599150-3b6048ecf084?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGhhaXIlMjBzdHlsZXxlbnwwfHwwfHx8MA%3D%3D" alt="" />
-
-          <div className='flex absolute bottom-1 space-x-3 p-2 items-center justify-center'>
-            <div className='w-[50px] h-[50px] bg-white flex items-center justify-center'>
-              <img className='w-[30px] h-[30px] text-red-900'
-                src={HairComb} alt="" />
-            </div>
-            <p className='text-white font-bold'>Hair style</p>
-          </div>
-        </div>
-
-        <div className='relative shadow-xl'>
-          <img
-            className='md:w-[40vw] md:h-[40vh]'
-            src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bmFpbCUyMGNhcmV8ZW58MHx8MHx8fDA%3D" alt="" />
-
-          <div className='flex absolute bottom-1 space-x-3 p-2 items-center justify-center'>
-            <div className='w-[50px] h-[50px] bg-white flex items-center justify-center'>
-              <img className='w-[30px] h-[30px] text-red-900'
-                src={NailCare} alt="" />
-            </div>
-            <p className='text-white font-bold'>Nail care</p>
-          </div>
-        </div>
-
-        <div className='relative shadow-3xl'>
-          <img
-            className='md:w-[40vw] md:h-[40vh]'
-            src="https://plus.unsplash.com/premium_photo-1661573269488-01fdb0bea3aa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y29zbWV0b2xvZ3l8ZW58MHx8MHx8fDA%3D" alt="" />
-
-          <div className='flex absolute bottom-7 space-x-3 p-2 items-center justify-center'>
-            <div className='w-[50px] h-[50px] bg-white flex items-center justify-center'>
-              <img className='w-[30px] h-[30px]'
-                src={Cosmetology} alt="" />
-            </div>
-            <p className='font-bold text-white'>Cosmetology</p>
-          </div>
-        </div>
+  
+        <ItemBox  
+            name="Make Up" 
+            productImage={MakeupBrush}
+            image="https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bmFpbCUyMGNhcmV8ZW58MHx8MHx8fDA%3D"
+        />
+        <ItemBox  
+            name="Hair Style" 
+            productImage={HairComb}
+            image="https://images.unsplash.com/photo-1583743599150-3b6048ecf084?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGhhaXIlMjBzdHlsZXxlbnwwfHwwfHx8MA%3D%3D"
+        />
+        <ItemBox  
+            name="Nail Care" 
+            productImage={NailCare}
+            image="https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bmFpbCUyMGNhcmV8ZW58MHx8MHx8fDA%3D"
+        />
+        <ItemBox  
+            name="Cosmetolog" 
+            productImage={Cosmetology}
+            image="https://plus.unsplash.com/premium_photo-1661573269488-01fdb0bea3aa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y29zbWV0b2xvZ3l8ZW58MHx8MHx8fDA%3D"
+        />    
         
       </div>
 
@@ -179,111 +147,51 @@ function Home() {
         <p className='text-red-900 text-6xl font-bold italic font-serif text-center p-4'>Our Shop</p>
         <p className=' text-gray-700 font-semibold text-center text-[20px]'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore!</p>
         
-        <div className='md:flex md:my-10 justify-center p-7 space-x-4 space-y-4'>
-
-          <div className='shadow-xl transition-transform duration-200 hover:-translate-y-3'>
-            <img className='md:w-[40vw] md:h-[40vh] '
-            src="https://imgs.search.brave.com/5eqrAuFy8aW4UTL-ZZ31kw0OiZz2WC-RTfyKNJCBD3U/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NzFVMzdFV1c2akwu/anBn" alt="" />
-            <div className='text-center md:my-2'>
-              <p className='text-[20px] font-bold font-serif'>Face Toner</p>
-              <p className='text-gray-600 font-semibold'><i class="fa-solid fa-indian-rupee-sign"></i>20/75ml</p>
-              <div className='flex justify-center my-2'>
-                <button className='text-white bg-red-900 rounded-[4px] font-bold p-[6px] cursor-pointer mb-4'>Buy Now</button>
-              </div>
-            </div>
-          </div>
-
-          <div className='shadow-xl transition-transform duration-200 hover:-translate-y-3'>
-            <img className='md:w-[40vw] md:h-[40vh] '
-            src="https://imgs.search.brave.com/IechnQWwXGCYDjy0KAPfKWhkwi6_TExmoY4t3ZLo3D8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjFTNW9UbnVjMkwu/anBn" alt="" />
-             <div className='text-center md:my-2 '>
-              <p className='text-[20px] font-bold font-serif'>Night Cream</p>
-              <p className='text-gray-600 font-semibold'> <i class="fa-solid fa-indian-rupee-sign"></i>30/50ml</p>
-              <div className='flex justify-center my-2'>
-                <button className='text-white bg-red-900 rounded-[4px] font-bold p-[6px] cursor-pointer mb-4'>Buy Now</button>
-              </div>
-            </div>
-          </div>
-
-          <div className='shadow-xl transition-transform duration-200 hover:-translate-y-3'>
-            <img className='md:w-[40vw] md:h-[40vh] '
-            src="https://imgs.search.brave.com/tZChc63eQ8MAcWramMFAMMmSSs_AsGaphZGXiYLGfek/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9odHRw/Mi5tbHN0YXRpYy5j/b20vRF9RX05QXzJY/XzY4ODQ2OS1NTEI4/MjI5MjgwOTc2Ml8w/MjIwMjUtRS1iYXNl/LWxpcXVpZGEtc3Vl/bGVuLW1ha2V1cC1i/LWJlYXV0eS1mb3Nj/by0zNS1tbC53ZWJw" alt="" />
-             <div className='text-center md:my-2'>
-              <p className='text-[20px] font-bold font-serif'>Makeup Base</p>
-              <p className='text-gray-600 font-semibold'><i class="fa-solid fa-indian-rupee-sign"></i>25/75ml</p>
-              <div className='flex justify-center my-2'>
-               <button className='text-white bg-red-900 rounded-[4px] font-bold p-[6px] cursor-pointer mb-4'>Buy Now</button>
-              </div>
-            </div>
-          </div>
-
-          <div className='shadow-xl transition-transform duration-200 hover:-translate-y-3'>
-            <img className='md:w-[40vw] md:h-[40vh] '
-             src="https://imgs.search.brave.com/QPixC7-tEhNxM5Bpcq5CPRO3A4c3k5qSdou4dhH9B04/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzYxVStuWFNtLUJM/LmpwZw" alt="" />
-             <div className='text-center md:my-2 '>
-              <p className='text-[20px] font-bold font-serif'>Makeup Brush</p>
-              <p className='text-gray-600 font-semibold'><i class="fa-solid fa-indian-rupee-sign"></i>40</p>
-              <div className='flex justify-center my-2'>
-               <button className='text-white bg-red-900 rounded-[4px] font-bold p-[6px] cursor-pointer md:mb-1 mb-4'>Buy Now</button>
-              </div>   
-            </div>
-          </div>
-
+        <div className='md:flex md:my-10 justify-center p-7 space-x-4 space-y-4 row-end-2'>
+          <Product 
+            productName="Face Toner"
+            productImage="https://imgs.search.brave.com/5eqrAuFy8aW4UTL-ZZ31kw0OiZz2WC-RTfyKNJCBD3U/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NzFVMzdFV1c2akwu/anBn"
+            price="20/75ml"
+          />
+          <Product 
+            productName="Night Cream"
+            productImage="https://imgs.search.brave.com/IechnQWwXGCYDjy0KAPfKWhkwi6_TExmoY4t3ZLo3D8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjFTNW9UbnVjMkwu/anBn"
+            price="30/50ml"
+          />
+          <Product 
+            productName="Makeup Base"
+            productImage="https://imgs.search.brave.com/tZChc63eQ8MAcWramMFAMMmSSs_AsGaphZGXiYLGfek/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9odHRw/Mi5tbHN0YXRpYy5j/b20vRF9RX05QXzJY/XzY4ODQ2OS1NTEI4/MjI5MjgwOTc2Ml8w/MjIwMjUtRS1iYXNl/LWxpcXVpZGEtc3Vl/bGVuLW1ha2V1cC1i/LWJlYXV0eS1mb3Nj/by0zNS1tbC53ZWJw"
+            price="25/75ml"
+          />
+          <Product 
+            productName="Makeup Brush"
+            productImage="https://imgs.search.brave.com/QPixC7-tEhNxM5Bpcq5CPRO3A4c3k5qSdou4dhH9B04/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzYxVStuWFNtLUJM/LmpwZw"
+            price="40"
+          />
         </div>
-
 
         <div className='md:flex md:my-10 justify-center p-7 space-x-2'>
-
-          <div className='shadow-xl transition-transform duration-200 hover:-translate-y-3'>
-            <img className='md:w-[40vw] md:h-[40vh] '
-            src="https://imgs.search.brave.com/23LdNGxIjf1sOJmWSZmsdGyIaX_yGUP548XeSbk4Mxk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/MzFyOVJCbXZPRUwu/anBn" alt="" />
-            <div className='text-center md:my-2'>
-              <p className='text-[20px] font-bold font-serif'>Facewash</p>
-              <p className='text-gray-600 font-semibold'><i class="fa-solid fa-indian-rupee-sign"></i>120/175ml</p>
-              <div className='flex justify-center my-2'>
-                <button className='text-white bg-red-900 rounded-[4px] font-bold p-[6px] cursor-pointer mb-4'>Buy Now</button>
-              </div>
-            </div>
-          </div>
-
-          <div className='shadow-xl transition-transform duration-200 hover:-translate-y-3'>
-            <img className='md:w-[40vw] md:h-[40vh] '
-            src="https://imgs.search.brave.com/bxA_dVaqnBuwd-Wb_J4r1elmchDeTTuCK3QWvKxN224/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvOTY5/NTI2MzYvcGhvdG8v/Ymx1c2gtbWFrZXVw/LmpwZz9zPTYxMng2/MTImdz0wJms9MjAm/Yz1aUGRmS2tCZmZj/LVpmOGtVTDdaYWdC/WVBISk1veFFNZEdz/aWpZQWgzLThFPQ" alt="" />
-             <div className='text-center md:my-2 '>
-              <p className='text-[20px] font-bold font-serif'>Face Powder</p>
-              <p className='text-gray-600 font-semibold'><i class="fa-solid fa-indian-rupee-sign"></i>30/50gm</p>
-              <div className='flex justify-center my-2'>
-                <button className='text-white bg-red-900 rounded-[4px] font-bold p-[6px] cursor-pointer mb-4'>Buy Now</button>
-              </div>
-            </div>
-          </div>
-
-          <div className='shadow-xl transition-transform duration-200 hover:-translate-y-3'>
-            <img className='md:w-[40vw] md:h-[40vh] '
-            src="https://imgs.search.brave.com/HSsJ7eRezqO1mhXOt2XhK7hmWyEPDWqGgJbg5tBb-vg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/Ymlvc2Vhd2VlZGdl/bC5jb20vY2RuL3No/b3AvcHJvZHVjdHMv/VXBncmFkZWRCYXNl/LTFHZWxQb2xpc2gu/anBnP3Y9MTY3MTU2/MDc4MCZ3aWR0aD0z/MDAw" alt="" />
-             <div className='text-center md:my-2'>
-              <p className='text-[20px] font-bold font-serif'>Gel Polish</p>
-              <p className='text-gray-600 font-semibold'><i class="fa-solid fa-indian-rupee-sign"></i>25/75ml</p>
-              <div className='flex justify-center my-2'>
-               <button className='text-white bg-red-900 rounded-[4px] font-bold p-[6px] cursor-pointer mb-4'>Buy Now</button>
-              </div>
-            </div>
-          </div>
-
-          <div className='shadow-xl transition-transform duration-200 hover:-translate-y-3'>
-            <img className='md:w-[40vw] md:h-[40vh] '
-             src="https://imgs.search.brave.com/hcMZrDxALsYeZzsBnk1ciXLqxxR_a-5LTtMP482Z50A/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuY3RmYXNzZXRz/Lm5ldC9iY2pyMzB2/eGg2dGQvNDVuTzRO/ZmNsSGxkN2Y2cXVG/cXg5Ry84MzViYjZh/ZmY0YzMyZDQ1NmUy/ODlhNGU1Mzg0MTQ0/Yy82ODA2NjMxX0Nh/cm91c2VsXzE" alt="" />
-             <div className='text-center md:my-2 '>
-              <p className='text-[20px] font-bold font-serif'>Face Serum</p>
-              <p className='text-gray-600 font-semibold'><i class="fa-solid fa-indian-rupee-sign"></i>140/150ml</p>
-              <div className='flex justify-center my-2'>
-               <button className='text-white bg-red-900 rounded-[4px] font-bold p-[6px] cursor-pointer mb-4'>Buy Now</button>
-              </div>   
-            </div>
-          </div>
-
+          <Product 
+            productName="Facewash"
+            productImage="https://imgs.search.brave.com/23LdNGxIjf1sOJmWSZmsdGyIaX_yGUP548XeSbk4Mxk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/MzFyOVJCbXZPRUwu/anBn"
+            price="120/175ml"
+          />
+          <Product 
+            productName="Face Powder"
+            productImage="https://imgs.search.brave.com/bxA_dVaqnBuwd-Wb_J4r1elmchDeTTuCK3QWvKxN224/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvOTY5/NTI2MzYvcGhvdG8v/Ymx1c2gtbWFrZXVw/LmpwZz9zPTYxMng2/MTImdz0wJms9MjAm/Yz1aUGRmS2tCZmZj/LVpmOGtVTDdaYWdC/WVBISk1veFFNZEdz/aWpZQWgzLThFPQ"
+            price="30/50gm"
+          />
+          <Product 
+            productName="Gel Polish"
+            productImage="https://imgs.search.brave.com/HSsJ7eRezqO1mhXOt2XhK7hmWyEPDWqGgJbg5tBb-vg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/Ymlvc2Vhd2VlZGdl/bC5jb20vY2RuL3No/b3AvcHJvZHVjdHMv/VXBncmFkZWRCYXNl/LTFHZWxQb2xpc2gu/anBnP3Y9MTY3MTU2/MDc4MCZ3aWR0aD0z/MDAw"
+            price="25/75ml"
+          />
+          <Product 
+            productName="Face Serum"
+            productImage="https://imgs.search.brave.com/hcMZrDxALsYeZzsBnk1ciXLqxxR_a-5LTtMP482Z50A/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuY3RmYXNzZXRz/Lm5ldC9iY2pyMzB2/eGg2dGQvNDVuTzRO/ZmNsSGxkN2Y2cXVG/cXg5Ry84MzViYjZh/ZmY0YzMyZDQ1NmUy/ODlhNGU1Mzg0MTQ0/Yy82ODA2NjMxX0Nh/cm91c2VsXzE"
+            price="140/150ml"
+          />       
         </div>
-
 
       </div>
 

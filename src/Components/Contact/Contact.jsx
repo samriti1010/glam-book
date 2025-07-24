@@ -1,6 +1,92 @@
 import lotus from '../../assets/lotus.png'
+import { useState } from 'react';
+// import Select from 'react-select';
 
 function Contact() {
+
+  const [selectedOption, setSelectedOption] = useState('');
+
+  const handleChange = (event) => {
+    setSelectedOption(event.target.value);
+  };
+
+
+  const SubmitHandler = async () => {
+
+    const payButton = document.getElementsByClassName('submitMessage-BTN')[0];
+
+    const payData={
+      "amount": 100.00,
+      "customer_id": "jn",
+      "customer_phone": "8290909090",
+      "customer_name": "HI",
+      "customer_email": "abc@yest.om"
+    }
+
+
+    // const fname = document.getElementsByClassName("fname")[0].value;
+    // const lname = document.getElementsByClassName("lname")[0].value;
+    // const email = document.getElementsByClassName("email")[0].value;
+    // const phone = document.getElementsByClassName("phone")[0].value;
+    // const date = document.getElementsByClassName("date")[0].value;
+    // const time = document.getElementsByClassName("time")[0].value;
+    // const service = document.getElementsByClassName("service")[0].value;
+    
+    // if (!fname || !lname || !email || !phone || !date || !time || !service) {
+    //   alert("Please fill all the required fields");
+    //   return;
+    // }
+
+    // const payData = {
+    //   amount: "100000.00",
+    //   customer_fname: fname,
+    //   customer_lname: lname,
+    //   customer_email: email,
+    //   customer_phone: phone,
+    //   date:date,
+    //   time:time,
+    //   customer_id,
+    // };
+  
+    
+    function initializeCashfreePayment(result) {
+    const cashfree = Cashfree({ mode: "sandbox" });
+    const { payment_session_id } = result;
+
+    const options = {
+      paymentSessionId: payment_session_id,
+      redirectTarget: "_self",
+    };
+    console.log(payment_session_id);
+    cashfree.checkout(options);
+
+    // showPaymentSuccess(paymentData);
+  }
+
+    try {
+      payButton.disabled = true;
+      payButton.textContent = "Processing...";
+
+      const response = await fetch("https://pg-integration.onrender.com/createOrder", {
+        method: "POST",
+        headers: {
+          "content-Type": "application/json",
+        },
+        body: JSON.stringify(payData),
+      });
+
+      const result = await response.json();
+      console.log(result);
+      initializeCashfreePayment(result);
+
+    } catch (err) {
+      console.log(err);
+    } finally {
+      payButton.disabled = false;
+      payButton.textContent = "Book Appointment";
+    }
+  }
+
   return (
 
     <div className='w-full md:mt-20'>
@@ -16,7 +102,7 @@ function Contact() {
       {/* location */}
       <div className="rounded-lg shadow-lg border border-gray-200 my-10">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.9713823682396!2d77.27502737427601!3d28.63061978416978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd0035a17b09%3A0x625b03f492fcbfe!2sLaxmi%20nagar%20metro!5e0!3m2!1sen!2sin!4v1752628637631!5m2!1sen!2sin"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3410.748074314835!2d75.7022928743956!3d31.255396660187696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391a5f5e9c489cf3%3A0x4049a5409d53c300!2sLovely%20Professional%20University!5e0!3m2!1sen!2sin!4v1753113577254!5m2!1sen!2sin"
           width="100%"
           height="450"
           allowfullscreen=""
@@ -34,8 +120,8 @@ function Contact() {
             <div className='mt-5 relative'>
               <i class="fa-solid fa-location-dot text-red-900 text-6xl opacity-20"></i>
               <div className=' absolute md:top-2 md:right-10 top-3 right-30 font-semibold font-sans text-gray-700'>
-                <p>New Delhi, India</p>
-                <p>Code-110092</p>
+                <p>Punjab, India</p>
+                <p>Code-112233</p>
               </div>
             </div>
           </div>
@@ -88,43 +174,71 @@ function Contact() {
                 <div className='md:flex flex-wrap space-x-4 md:my-4'>
                   <div className='md:my-0 my-2'>
                     <label className='font-serif'>First Name</label><br />
-                    <input type="text" placeholder='First name' className='text-gray-700 md:w-[25vw] font-semibold border-1 p-1' />
+                    <input type="text" placeholder='First name' className='fname text-gray-700 md:w-[25vw] font-semibold border-1 p-1' required />
                   </div>
                   <div className='md:my-0 my-2'>
                     <label className='font-serif'>Last Name</label><br />
-                    <input type="text" placeholder='Last name' className='text-gray-700 md:w-[25vw] font-semibold border-1 p-1' />
+                    <input type="text" placeholder='Last name' className='lname text-gray-700 md:w-[25vw] font-semibold border-1 p-1' required />
                   </div>
                 </div>
 
                 <div className='md:flex flex-wrap space-x-4 md:my-4'>
                   <div className='md:my-0 my-2'>
                     <label className='font-serif'>Email</label><br />
-                    <input type="email" placeholder='Email' className='text-gray-700 md:w-[25vw] font-semibold border-1 p-1' />
+                    <input type="email" placeholder='Email' className='email text-gray-700 md:w-[25vw] font-semibold border-1 p-1' required />
                   </div>
                   <div className='md:my-0 my-2'>
                     <label className='font-serif'>Phone</label><br />
-                    <input type="number" placeholder='Phone' className='text-gray-700 md:w-[25vw] font-semibold border-1 p-1' />
+                    <input type="number" placeholder='Phone' className='phone text-gray-700 md:w-[25vw] font-semibold border-1 p-1' required />
                   </div>
                 </div>
 
                 <div className='md:flex flex-wrap space-x-4 md:my-4'>
                   <div className='md:my-0 my-2'>
                     <label className='font-serif'>Date</label><br />
-                    <input type="date" placeholder='date' className='text-gray-700 md:w-[25vw] font-semibold border-1 p-1' />
+                    <input type="date" placeholder='date' className='date text-gray-700 md:w-[25vw] font-semibold border-1 p-1 cursor-pointer' required />
                   </div>
                   <div className='md:my-0 my-2'>
                     <label className='font-serif'>Time</label><br />
-                    <input type="time" placeholder='Time' className='text-gray-700 md:w-[25vw] font-semibold border-1 p-1' />
+                    <input type="time" placeholder='Time' className='time text-gray-700 md:w-[25vw] font-semibold border-1 p-1 cursor-pointer' required />
                   </div>
                 </div>
 
                 <div className='md:my-0 my-2'>
-                  <label className='font-serif'>Service</label><br />
-                  <input type="" placeholder='Services' className='text-gray-700 w-full font-semibold border-1 p-1' />
+                  {/* <label className='font-serif'>Service</label><br /> */}
+                  {/* <input type="" placeholder='Services' className='text-gray-700 w-full font-semibold border-1 p-1' required /> */}
+
+                  <div className="">
+                    <label htmlFor="service" className="font-serif">
+                      Select a Service
+                    </label><br />
+                    <select
+                      id="service"
+                      value={selectedOption}
+                      onChange={handleChange}
+                      className="service text-black w-full font-semibold border-1 p-10' required outline-none my-2 cursor-pointer"
+                      required
+                    >
+                      <option className='bg-red-900 text-white cursor-pointer' value="" disabled>Select one</option>
+                      <option className='bg-red-900 text-white cursor-pointer' value="Facial">Facial</option>
+                      <option className='bg-red-900 text-white cursor-pointer' value="Haircut">Haircut</option>
+                      <option className='bg-red-900 text-white cursor-pointer' value="Nail Care">Nail Care</option>
+                      <option className='bg-red-900 text-white cursor-pointer' value="Pedicure">Pedicure</option>
+                      <option className='bg-red-900 text-white cursor-pointer' value="Eyebrow">Eyebrow</option>
+                      <option className='bg-red-900 text-white cursor-pointer' value="SPA">SPA</option>
+                    </select>
+
+                    {selectedOption && (
+                      <p className="mt-3 text-red-900">You selected: {selectedOption}</p>
+                    )}
+                  </div>
+
                 </div>
 
                 <br />
-                <button type='submit' className='w-full p-2 bg-red-900 text-white text-xl cursor-pointer'>Send Message</button>
+                <button
+                  onClick={SubmitHandler}
+                  type='submit' className='submitMessage-BTN w-full p-2 bg-red-900 text-white text-xl cursor-pointer'>Book Appointment</button>
 
               </div>
 
@@ -145,35 +259,35 @@ function Contact() {
           <div className='md:w-[19vw] md:h-[40vh] space-y-5'>
             <img className='md:w-[19vw] md:h-[40vh] shadow-lg'
               src="https://images.pexels.com/photos/247124/pexels-photo-247124.jpeg" />
-            <img className='md:w-[20vw] md:h-[40vh] shadow-lg'
+            <img className='md:w-[19vw] md:h-[40vh] shadow-lg'
               src="https://images.pexels.com/photos/2065198/pexels-photo-2065198.jpeg" />
           </div>
 
           <div className='md:w-[19vw] md:h-[40vh] space-y-5'>
             <img className='md:w-[19vw] md:h-[40vh] shadow-lg'
               src="https://images.pexels.com/photos/247297/pexels-photo-247297.jpeg" />
-            <img className='md:w-[20vw] md:h-[40vh] shadow-lg'
+            <img className='md:w-[19vw] md:h-[40vh] shadow-lg'
               src="https://images.pexels.com/photos/2797147/pexels-photo-2797147.jpeg" />
           </div>
 
           <div className='md:w-[19vw] md:h-[40vh] space-y-5'>
             <img className='md:w-[19vw] md:h-[40vh] shadow-lg'
               src="https://images.pexels.com/photos/458768/pexels-photo-458768.jpeg" />
-            <img className='md:w-[20vw] md:h-[40vh] shadow-lg'
+            <img className='md:w-[19vw] md:h-[40vh] shadow-lg'
               src="https://images.pexels.com/photos/2870355/pexels-photo-2870355.jpeg" />
           </div>
 
           <div className='md:w-[19vw] md:h-[40vh] space-y-5'>
             <img className='md:w-[19vw] md:h-[40vh] shadow-lg'
               src="https://images.pexels.com/photos/2752099/pexels-photo-2752099.jpeg" />
-            <img className='md:w-[20vw] md:h-[40vh] shadow-lg'
+            <img className='md:w-[19vw] md:h-[40vh] shadow-lg'
               src="https://images.pexels.com/photos/2053851/pexels-photo-2053851.jpeg" />
           </div>
 
           <div className='md:w-[19vw] md:h-[40vh] space-y-5'>
             <img className='md:w-[19vw] md:h-[40vh] shadow-lg'
               src="https://images.pexels.com/photos/2772099/pexels-photo-2772099.jpeg" />
-            <img className='md:w-[20vw] md:h-[40vh] shadow-lg'
+            <img className='md:w-[19vw] md:h-[40vh] shadow-lg'
               src="https://images.pexels.com/photos/2065203/pexels-photo-2065203.jpeg" />
           </div>
 
