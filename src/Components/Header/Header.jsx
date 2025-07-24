@@ -49,8 +49,10 @@ function Header({onSearch, addCartvalue}) {
                 <NavLink to='/signup'>
                     <button className='text-red-950 font-semibold cursor-pointer hover:text-red-900'>Login</button>
                 </NavLink>
-                <div>
-                    <button className='text-red-900'>{addCartvalue}</button>
+                <div className='relative'>
+                    <div className=''>
+                        <button className='text-red-900 font-bold text-[16px] absolute bottom-4 left-1 cursor-pointer'>{addCartvalue}</button>
+                    </div>
                     <i class="fa-solid fa-cart-plus cursor-pointer"></i>
                 </div>
 

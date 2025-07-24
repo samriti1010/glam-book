@@ -16,17 +16,17 @@ const Signup = () => {
                         <div className='space-y-3 mt-5'>
 
                             <div className='flex flex-wrap border border-gray-400 rounded-[4px] items-center justify-between md:p-[5px]'>
-                                <input className='outline-none font-semibold' type="email" placeholder='Email' />
+                                <input className='outline-none font-semibold w-3/4' type="email" placeholder='Email' />
                                 <i class="fa-solid fa-envelope"></i>
                             </div>
 
                             <div className='flex flex-wrap border border-gray-400 rounded-[4px] items-center justify-between md:p-[5px]'>
-                                <input className='outline-none font-semibold' type="password" placeholder='Create Password' />
+                                <input className='outline-none font-semibold w-3/4' type="password" placeholder='Create Password' />
                                 <i class="fa-solid fa-lock"></i>
                             </div>
 
                             <div className='flex flex-wrap border border-gray-400 rounded-[4px] items-center justify-between md:p-[5px]'>
-                                <input className='outline-none font-semibold' type="password" placeholder='Confirm Password' />
+                                <input className='outline-none font-semibold w-3/4' type="password" placeholder='Confirm Password' />
                                 <i class="fa-solid fa-lock"></i>
                             </div>
 

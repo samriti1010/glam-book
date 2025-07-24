@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 import buyButtonHandler from '../purchase'
-import { use } from 'react'
+import { useOutletContext } from 'react-router-dom';
 
 
 
-function Product({ productImage, productName, price, incrementCart, decrementCart }) {
+
+function Product({ productImage, productName, price}) {
 
     // addtocart Button
+    const {incrementCart, decrementCart } = useOutletContext();
 
     const [enableAddToCart, setEnableAddToCart] = useState(false)
 
@@ -33,7 +35,7 @@ function Product({ productImage, productName, price, incrementCart, decrementCar
                     <button
                         onClick={addToCartHandler}
                         // enableAddToCart={enableAddToCart}
-                        className='buyButton text-white bg-red-900 rounded-[4px] font-bold p-[6px] cursor-pointer mb-4'>{!enableAddToCart ? "Add Cart" : "Remove Cart"}</button>
+                        className='buyButton text-white bg-red-900 rounded-[4px] font-bold p-[6px] cursor-pointer mb-4'>{!enableAddToCart ? "Add to Cart" : "Remove from Cart"}</button>
                 </div>
             </div>
         </div>

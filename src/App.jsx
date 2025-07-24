@@ -9,7 +9,7 @@ import { Outlet } from 'react-router-dom'
 function App() {
 
   const [searchKeyword, setSearchKeyword] = useState('')
-  
+
   const [addCartvalue, setAddCartValue] = useState(0);
 
   const incrementCart = () => setAddCartValue(prev => prev + 1);
@@ -22,9 +22,7 @@ function App() {
       <Header onSearch={setSearchKeyword} addCartvalue={addCartvalue}/>
       <div className='mt-20'>
         <Outlet 
-          context={[searchKeyword]}
-          incrementCart={incrementCart}
-          decrementCart={decrementCart}
+          context={{searchKeyword, incrementCart, decrementCart }}
         />
       </div>
       <Footer/>

@@ -8,6 +8,7 @@ import Cosmetology from '../../assets/Cosmetology.png'
 import { useState } from 'react'
 import ItemBox from './ItemBox'
 import Product from './Product'
+import { useOutletContext } from 'react-router-dom';
 
 function Home() {
 
@@ -16,6 +17,7 @@ function Home() {
     const toggleBox = (boxName) => {
       setActiveBox(activeBox === boxName ? null : boxName);
     };
+
 
 
   return (
