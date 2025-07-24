@@ -4,7 +4,7 @@ import lotus from '../../assets/lotus.png'
 function Footer() {
   return (
     <div className='w-full h-auto bg-red-100'>
-        <div className='flex justify-center relative md:p-5 p-10 '>
+        <div className='flex justify-center relative md:p-5 p-10 sam '>
             <img className='md:w-[32vw] md:h-[60vh] w-[35vw] h-[43] opacity-20 'src={lotus} />
 
             <div className='md:w-1/3 h-auto absolute text-center space-y-2 md:top-25 top-15'>
